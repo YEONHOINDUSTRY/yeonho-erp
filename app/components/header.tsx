@@ -3,11 +3,33 @@ import Link from "next/link";
 export default function Header() {
   return (
     <div style={headerStyle}>
-      <Link href="/" style={logoStyle}>연호 ERP</Link>
-      <Link href="/production" style={menuStyle}>생산일보 입력</Link>
-      <Link href="/production/list" style={menuStyle}>생산일보 조회</Link>
-      <Link href="/customers" style={menuStyle}>거래처관리</Link>
-      <Link href="/items" style={menuStyle}>품목관리</Link>
+      <Link href="/" style={logoStyle}>
+        연호 ERP
+      </Link>
+
+      <Link href="/production" style={menuStyle}>
+        생산일보 입력
+      </Link>
+
+      <Link href="/production/list" style={menuStyle}>
+        생산일보 조회
+      </Link>
+
+      <Link href="/statistics" style={menuStyle}>
+        생산통계
+      </Link>
+
+      <Link href="/settlement" style={menuStyle}>
+        정산관리
+      </Link>
+
+      <Link href="/customers" style={menuStyle}>
+        거래처관리
+      </Link>
+
+      <Link href="/items" style={menuStyle}>
+        품목관리
+      </Link>
     </div>
   );
 }
