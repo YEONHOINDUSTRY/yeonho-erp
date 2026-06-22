@@ -47,3 +47,20 @@ db.serialize(() => {
   db.run("ALTER TABLE productions ADD COLUMN unit_price INTEGER DEFAULT 0", () => {});
   db.run("ALTER TABLE productions ADD COLUMN amount INTEGER DEFAULT 0", () => {});
 });
+db.serialize(() => {
+  db.run(`
+    CREATE TABLE IF NOT EXISTS settlements (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      settlement_month TEXT NOT NULL,
+      total_qty INTEGER DEFAULT 0,
+      production_amount INTEGER DEFAULT 0,
+      manager_stop_hours REAL DEFAULT 0,
+      manager_stop_amount INTEGER DEFAULT 0,
+      worker_stop_hours REAL DEFAULT 0,
+      worker_stop_amount INTEGER DEFAULT 0,
+      transport_cost INTEGER DEFAULT 0,
+      final_amount INTEGER DEFAULT 0,
+      created_at TEXT DEFAULT CURRENT_TIMESTAMP
+    )
+  `);
+});
